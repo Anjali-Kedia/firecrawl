@@ -454,7 +454,8 @@ const configSchema = z.object({
     .int()
     .positive()
     .default(256 * 1024 * 1024),
-  // Comma-separated team ids granted the privileged cap.
+  // Comma-separated team ids granted the privileged cap. Prefer the
+  // `largePdfs` team flag, which grants the same cap without a deploy.
   PDF_BY_REFERENCE_PRIVILEGED_TEAM_IDS: z.string().optional(),
 
   // RunPod
@@ -601,9 +602,7 @@ const configSchema = z.object({
   WIKIPEDIA_ENTERPRISE_PASSWORD: z.string().optional(),
 
   // Browser Service
-  BROWSER_SERVICE_URL: z.string().optional(),
-  BROWSER_SERVICE_API_KEY: z.string().optional(),
-  BROWSER_SERVICE_WEBHOOK_SECRET: z.string().optional(),
+  HANGAR_URL: z.url().optional(),
 
   // Audio (avgrab)
   AVGRAB_SERVICE_URL: z.string().optional(),

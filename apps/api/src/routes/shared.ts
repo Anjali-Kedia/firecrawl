@@ -33,7 +33,10 @@ import { getThirdPartyDataTermsRequiredResponse } from "../lib/exchange";
 import { getExchangeAccessForRequestBody } from "../lib/exchange-request";
 import { isToolsOnlySearch } from "../search/alexandria";
 import { getScrapeZDR } from "../lib/zdr-helpers";
-import { isAgentInteropSecretValid } from "../lib/agent-interop";
+import {
+  agentInteropStatus,
+  isAgentInteropSecretValid,
+} from "../lib/agent-interop";
 
 export function checkCreditsMiddleware(
   _minimum?: number,
@@ -189,6 +192,11 @@ export function checkCreditsMiddleware(
         return next();
       }
 
+      // Keep the authoritative balance available to opt-in response guidance.
+      // `req.account.remainingCredits` deliberately becomes Infinity when
+      // Autumn allows overage, so it cannot carry this informational signal.
+      res.locals.agentCreditsRemaining = autumnResult.remaining;
+
       const success = autumnResult.allowed;
       // When Autumn allows the request (including overage), don't let a
       // small remaining balance clamp downstream limits (e.g. crawl).
@@ -273,6 +281,7 @@ export function authMiddleware(
   options: {
     allowKeyless?: boolean | ((req: RequestWithMaybeAuth) => boolean);
     keylessFeedback?: boolean;
+    allowAgentManagedKey?: boolean;
   } = {},
 ): (req: RequestWithMaybeAuth, res: Response, next: NextFunction) => void {
   return (req, res, next) => {
@@ -319,7 +328,7 @@ export function authMiddleware(
 
       const { team_id, org_id, chunk } = auth;
 
-      req.auth = { team_id, org_id };
+      req.auth = { team_id, org_id, agentInterop: agentInteropStatus(req) };
       req.acuc = chunk ?? undefined;
       next();
     })().catch(err => next(err));
