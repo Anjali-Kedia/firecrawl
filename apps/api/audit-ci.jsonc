@@ -9,6 +9,11 @@
         // Owner: team-engineering-reviewers. Tracking: create internal ticket.
         // Expires: 2026-10-08.
         "GHSA-v2v4-37r5-5v8g",
-        "GHSA-mwp4-54f8-5fhr"
+        "GHSA-mwp4-54f8-5fhr",
+        // GHSA-rpw4-54j3-4h4q: ip-address 6.x is used only by the
+        // geoip-country database update script, not by API lookups.
+        // The fix is in 10.x and requires upstream compatibility work.
+        // Expires: 2026-10-08.
+        "GHSA-rpw4-54j3-4h4q"
     ]
 }

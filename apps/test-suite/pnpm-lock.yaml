@@ -9,7 +9,7 @@ overrides:
   fast-xml-builder: '>=1.1.6 <2.0.0'
   fast-xml-parser: ^5.7.0
   minimatch@<10.2.3: '>=10.2.3'
-  undici@>=7.0.0 <7.29.0: 7.29.0
+  undici@>=7.0.0 <7.29.1: 7.29.1
   picomatch@<4.0.4: '>=4.0.4'
   brace-expansion@>=5.0.0 <5.0.9: 5.0.9
   js-yaml@>=3.0.0 <3.15.2: 3.15.2
@@ -34,7 +34,7 @@ importers:
     devDependencies:
       artillery:
         specifier: ^2.0.34
-        version: 2.0.34(@types/node@25.5.0)
+        version: 2.0.34(@types/node@25.5.0)(supports-color@8.1.1)
 
 packages:
 
@@ -1724,8 +1724,8 @@ packages:
   undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
-  undici@7.29.0:
-    resolution: {integrity: sha512-IDxfleLmmbSskfWSUATiN1nfn2rDuvnMOqb5CWR92iIfojA0Ud+ulOAAEQ57LPr9rWmsreUyf5lwyao+7GNNVw==}
+  undici@7.29.1:
+    resolution: {integrity: sha512-RYONW2MeafgYlkVOKYKkA/Ag7BmXqgIWCa8t1m0JcxrQg9pI9lEqRhAOruOBCbAohOa/gkCF+iPi9hrgvTzu6Q==}
     engines: {node: '>=20.18.1'}
 
   unique-string@3.0.0:
@@ -2847,14 +2847,14 @@ snapshots:
     dependencies:
       sprintf-js: 1.0.3
 
-  arrivals@2.1.2:
+  arrivals@2.1.2(supports-color@8.1.1):
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
       nanotimer: 0.3.14
     transitivePeerDependencies:
       - supports-color
 
-  artillery@2.0.34(@types/node@25.5.0):
+  artillery@2.0.34(@types/node@25.5.0)(supports-color@8.1.1):
     dependencies:
       '@artilleryio/sketches-js': 2.1.1
       '@aws-sdk/client-cloudwatch': 3.1128.0
@@ -2894,7 +2894,7 @@ snapshots:
       '@smithy/core': 3.33.3
       '@upstash/redis': 1.37.0
       agentkeepalive: 4.6.0
-      arrivals: 2.1.2
+      arrivals: 2.1.2(supports-color@8.1.1)
       async: 2.6.4
       chalk: 4.1.2
       cheerio: 1.2.0
@@ -2904,7 +2904,7 @@ snapshots:
       cookie-parser: 1.4.7
       cross-spawn: 7.0.6
       csv-parse: 4.16.3
-      datadog-metrics: 0.12.1
+      datadog-metrics: 0.12.1(supports-color@8.1.1)
       debug: 4.4.3(supports-color@8.1.1)
       decompress-response: 6.0.0
       deep-for-each: 3.0.0
@@ -2922,14 +2922,14 @@ snapshots:
       got: 14.6.6
       hot-shots: 10.2.1
       hpagent: 0.1.2
-      https-proxy-agent: 5.0.1
+      https-proxy-agent: 5.0.1(supports-color@8.1.1)
       jmespath: 0.16.0
       joi: 17.13.7
       js-yaml: 3.15.2
       jsonpath-plus: 10.4.0
       jsonwebtoken: 9.0.3
       lodash: 4.18.1
-      mixpanel: 0.18.1
+      mixpanel: 0.18.1(supports-color@8.1.1)
       moment: 2.30.1
       ms: 2.1.3
       nanoid: 3.3.18
@@ -2940,9 +2940,9 @@ snapshots:
       protobufjs: 7.6.5
       rc: 1.2.8
       semver: 7.7.4
-      socket.io-client: 4.8.3
+      socket.io-client: 4.8.3(supports-color@8.1.1)
       socketio-wildcard: 2.0.0
-      sqs-consumer: 6.0.2(@aws-sdk/client-sqs@3.1128.0)
+      sqs-consumer: 6.0.2(@aws-sdk/client-sqs@3.1128.0)(supports-color@8.1.1)
       tempy: 3.2.0
       tough-cookie: 5.1.2
       uuid: 11.1.1
@@ -3054,7 +3054,7 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
       parse5-parser-stream: 7.1.2
-      undici: 7.29.0
+      undici: 7.29.1
       whatwg-mimetype: 4.0.0
 
   chokidar@3.6.0:
@@ -3150,7 +3150,7 @@ snapshots:
 
   csv-parse@4.16.3: {}
 
-  datadog-metrics@0.12.1:
+  datadog-metrics@0.12.1(supports-color@8.1.1):
     dependencies:
       '@datadog/datadog-api-client': 1.53.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -3246,7 +3246,7 @@ snapshots:
       iconv-lite: 0.6.3
       whatwg-encoding: 3.1.1
 
-  engine.io-client@6.6.4:
+  engine.io-client@6.6.4(supports-color@8.1.1):
     dependencies:
       '@socket.io/component-emitter': 3.1.2
       debug: 4.4.3(supports-color@8.1.1)
@@ -3461,14 +3461,14 @@ snapshots:
       quick-lru: 5.1.1
       resolve-alpn: 1.2.1
 
-  https-proxy-agent@5.0.0:
+  https-proxy-agent@5.0.0(supports-color@8.1.1):
     dependencies:
       agent-base: 6.0.2
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@5.0.1:
+  https-proxy-agent@5.0.1(supports-color@8.1.1):
     dependencies:
       agent-base: 6.0.2
       debug: 4.4.3(supports-color@8.1.1)
@@ -3657,9 +3657,9 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  mixpanel@0.18.1:
+  mixpanel@0.18.1(supports-color@8.1.1):
     dependencies:
-      https-proxy-agent: 5.0.0
+      https-proxy-agent: 5.0.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -3811,18 +3811,18 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  socket.io-client@4.8.3:
+  socket.io-client@4.8.3(supports-color@8.1.1):
     dependencies:
       '@socket.io/component-emitter': 3.1.2
       debug: 4.4.3(supports-color@8.1.1)
-      engine.io-client: 6.6.4
-      socket.io-parser: 4.2.7
+      engine.io-client: 6.6.4(supports-color@8.1.1)
+      socket.io-parser: 4.2.7(supports-color@8.1.1)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  socket.io-parser@4.2.7:
+  socket.io-parser@4.2.7(supports-color@8.1.1):
     dependencies:
       '@socket.io/component-emitter': 3.1.2
       debug: 4.4.3(supports-color@8.1.1)
@@ -3833,7 +3833,7 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  sqs-consumer@6.0.2(@aws-sdk/client-sqs@3.1128.0):
+  sqs-consumer@6.0.2(@aws-sdk/client-sqs@3.1128.0)(supports-color@8.1.1):
     dependencies:
       '@aws-sdk/client-sqs': 3.1128.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -3914,7 +3914,7 @@ snapshots:
 
   undici-types@7.18.2: {}
 
-  undici@7.29.0: {}
+  undici@7.29.1: {}
 
   unique-string@3.0.0:
     dependencies:
