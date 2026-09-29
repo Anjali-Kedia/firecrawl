@@ -10,8 +10,9 @@
         // Expires: 2026-10-08.
         "GHSA-v2v4-37r5-5v8g",
         "GHSA-mwp4-54f8-5fhr",
-        // GHSA-rpw4-54j3-4h4q: ip-address 6.x is used only by the
-        // geoip-country database update script, not by API lookups.
+        // GHSA-rpw4-54j3-4h4q: geoip-country declares ip-address 6.x as a
+        // runtime dependency, but its lookup code uses Node's net module and
+        // does not load ip-address. Only its database update script imports it.
         // The fix is in 10.x and requires upstream compatibility work.
         // Expires: 2026-10-08.
         "GHSA-rpw4-54j3-4h4q"
